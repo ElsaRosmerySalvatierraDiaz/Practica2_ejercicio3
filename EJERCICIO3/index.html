@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ADMINISTRACIÓN DE USUARIOS</title>
+        <!-- Importar Bootstrap -->
+        <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css">
+    </head>
+<body>
+    <div class="container">
+        <h1>Agregar usuario:</h1>
+        <form id="myForm">
+            <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre :</label>
+            <input type="text" class="form-control" id="nombre"name="nombre" required>
+            </div>
+            <div class="mb-3">
+                <label for="apellido" class="form-label">Apellido:</label>
+                <input type="text" class="form-control" id="apellido"name="apellido" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email:</label>
+                    <input type="email" class="form-control" id="email"name="email" required>
+                </div>
+                <div class="mb-2">
+                    <label for="telefono" class="form-label">Telefono:</label>
+                    <input type="number" class="form-control" id="telefono"name="telefono" required>
+                </div>
+                <div class="mb-1">
+                    <label for="contraseña" class="form-label">contraseña:</label>
+                    <input type="password" class="form-control" id="contraseña"name="contraseña" required>
+                </div>
+                
+    <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>
+    <table class="table mt-4" id="contador">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Email</th>
+                <th>Telefono</th>
+            </tr>
+        </thead>
+        <tbody id="dataTable"></tbody>
+    </table>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.min.js"></script>
+    <script>$(document).ready(function() {$('#myForm').on('submit', function(e) {e.preventDefault();
+    var nombre = $('#nombre').val();
+    var ape = $('#apellido').val();
+    var email = $('#email').val();
+    var telf = $('#telefono').val();
+    $('#dataTable').append('<tr><td>'+nombre+'</td><td>'+ape+'</td><td>'+email+'</td><td>'+telf+'</td></tr>');
+
+        $('#myForm')[0].reset();
+        });
+        });
+
+ 
+    </script>
+
+    </body>
+    </html>
